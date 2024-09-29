@@ -43,22 +43,13 @@ Piece* init_piece(int value, char* img_path, Color color, Position position) {
 }
 
 void init_board() {
-    // TODO: hardcoded positions -> cleanup later
-    int i = 0;
-
-    while (i != 8) {
-        // 8 black pawns
-        init_piece(1, "assets/img/pawn.svg", GRAY, (Position){1, i});
-    }
-
-    while (i != 16) {
-        // 8 white pawns
-    }
-
+    for (int i = 0; i < 8; i++) {
+        Board[i] = init_piece(1, "assets/img/pawn.svg", GRAY, (Position){1, i}); // black pawns
+        Board[i * 2] = init_piece(1, "assets/img/pawn.svg", WHITE, (Position){6, i}); // white pawns
+    }   
 }
 
 void fill_field(int row, int col, Color color) {
-
     int rows = 8;
     int cols = 8;
 
@@ -78,7 +69,6 @@ void fill_field(int row, int col, Color color) {
 
 void draw_field() {
     // draws a 8 by 8 chess field, colored black and white
-
     int rows = 8;
     int cols = 8;
 
@@ -109,7 +99,6 @@ void draw_field() {
 // }
 
 int main(void) {
-
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "raylib [core] example - basic window");
     SetWindowTitle("Chess");
 
@@ -117,7 +106,7 @@ int main(void) {
     // Texture2D texture = LoadTextureFromImage(test_image);
     // UnloadImage(test_image);
 
-    // init_board();
+    init_board();
 
     SetTargetFPS(60);
 
