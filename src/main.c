@@ -3,13 +3,11 @@
 #include "global.h"
 #include "board.h"
 
+#include "piece.h"
+
 int main(void) {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "raylib [core] example - basic window");
     SetWindowTitle("Chess");
-
-    // Image test_image = LoadImageSvg("assets/img/king.svg", 55, 55);
-    // Texture2D texture = LoadTextureFromImage(test_image);
-    // UnloadImage(test_image);
 
     init_board();
     SetTargetFPS(60);
@@ -24,7 +22,9 @@ int main(void) {
         
         draw_field();
 
-        // DrawTexture(texture, (SCREEN_WIDTH - texture.width) / 2, (SCREEN_HEIGHT - texture.height) / 2, GRAY);
+        for (int i = 0; i < 32; i++) {
+            draw_piece(Board[i]);
+        }
 
         EndDrawing();
     }

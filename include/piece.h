@@ -7,5 +7,6 @@
 #include <stdlib.h>
 
 Piece* init_piece(int value, char* img_path, Color color, Position position);
+void draw_piece(Piece* piece);
 
 #endif

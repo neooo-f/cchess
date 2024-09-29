@@ -2,7 +2,8 @@
     "files.associations": {
         "raylib.h": "c",
         "cstdio": "c",
-        "board.h": "c"
+        "board.h": "c",
+        "piece.h": "c"
     },
     "makefile.configureOnOpen": false
 }

@@ -21,13 +21,15 @@ Piece* init_piece(int value, char* img_path, Color color, Position position) {
     return p_piece;
 }
 
-// void draw_piece_in_middle(Piece* piece) {
-//     if (piece != NULL) {
-//         // Calculate the center position of the piece within its cell
-//         int centerX = (SCREEN_WIDTH - (8 * CELL_SIZE)) / 2 + piece->col * CELL_SIZE + (CELL_SIZE - piece->texture.width) / 2;
-//         int centerY = (SCREEN_HEIGHT - (8 * CELL_SIZE)) / 2 + piece->row * CELL_SIZE + (CELL_SIZE - piece->texture.height) / 2;
+/**
+ * draws piece to board
+ */
+void draw_piece(Piece* p_piece) {
+    if (p_piece != NULL) {
+        // calculates center position of the piece within its cell
+        int center_x = (SCREEN_WIDTH - (8 * CELL_SIZE)) / 2 + p_piece->position.col * CELL_SIZE + (CELL_SIZE - p_piece->texture.width) / 2;
+        int center_y = (SCREEN_HEIGHT - (8 * CELL_SIZE)) / 2 + p_piece->position.row * CELL_SIZE + (CELL_SIZE - p_piece->texture.height) / 2;
 
-//         // Draw the texture in the center of the cell
-//         DrawTexture(piece->texture, centerX, centerY, piece->color);
-//     }
-// }
+        DrawTexture(p_piece->texture, center_x, center_y, p_piece->color);
+    }
+}
