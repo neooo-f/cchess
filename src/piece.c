@@ -20,3 +20,14 @@ Piece* init_piece(int value, char* img_path, Color color, Position position) {
 
     return p_piece;
 }
+
+// void draw_piece_in_middle(Piece* piece) {
+//     if (piece != NULL) {
+//         // Calculate the center position of the piece within its cell
+//         int centerX = (SCREEN_WIDTH - (8 * CELL_SIZE)) / 2 + piece->col * CELL_SIZE + (CELL_SIZE - piece->texture.width) / 2;
+//         int centerY = (SCREEN_HEIGHT - (8 * CELL_SIZE)) / 2 + piece->row * CELL_SIZE + (CELL_SIZE - piece->texture.height) / 2;
+
+//         // Draw the texture in the center of the cell
+//         DrawTexture(piece->texture, centerX, centerY, piece->color);
+//     }
+// }

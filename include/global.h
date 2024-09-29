@@ -2,6 +2,7 @@
 #define GLOBAL_H
 
 #include <stdlib.h>
+#include "raylib.h"
 
 typedef struct {
     int row;

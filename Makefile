@@ -17,7 +17,7 @@ FRAMEWORKS = -framework CoreVideo -framework IOKit -framework Cocoa -framework G
 LIBS = lib/libraylib.a
 
 # source files
-SRC = src/main.c
+SRC = src/main.c src/global.c src/board.c src/piece.c
 
 # output directory
 BIN_DIR = bin/
