@@ -6,7 +6,7 @@ void init_board() {
         Board[i + 8] = init_piece(1, "assets/img/pawn.svg", WHITE, (Position){6, i}); // white pawns
     }
 
-    // black rooks  
+    // black rooks
     Board[16] = init_piece(5, "assets/img/rook.svg", GRAY, (Position){0, 0});
     Board[17] = init_piece(5, "assets/img/rook.svg", GRAY, (Position){0, 7});
 
@@ -48,10 +48,10 @@ void fill_field(int row, int col, Color color) {
     int rows = 8;
     int cols = 8;
 
-    // calculates grid offset
     int grid_width = cols * CELL_SIZE;
     int grid_height = rows * CELL_SIZE;
 
+    // calculates grid offset
     int offset_x = (SCREEN_WIDTH - grid_width) / 2;
     int offset_y = (SCREEN_HEIGHT - grid_height) / 2;
 
